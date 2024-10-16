@@ -1,30 +1,24 @@
-function preload() {
-  // put preload code here
-}
+
 
 function setup() {
-  createCanvas(1080, 1080);
+  createCanvas(windowWidth, windowHeight);
   noLoop();
   // put setup code here
-  const message =
-    "This is a template repository\nfor the course Laboratorio di Computergrafica\nCommunication Design, Politecnico di Milano";
-  textAlign(CENTER, CENTER);
-  textSize(16);
-  text(message, width / 2, height / 2);
+  
 }
 
 
 function draw() {
   background(220);
   noStroke();
-
+ let a = windowWidth/50;
   //creazione di 3 griglie di quadrati (grandi, medi, piccoli)
 
 
   //quadrati grandi
-  let columns = 9; 
-  let rows = 9; 
-  let rectSize = 120;
+  let columns = windowHeight;
+  let rows = windowWidth; 
+  let rectSize = a;
   let colors= ["#ffb746","#bb2f76", "#c3ff43"] //creazione di un array "colors" di 3 colori 
 
   //determinazione posizione rettangoli grandi tramite il loop "for"
@@ -42,13 +36,13 @@ function draw() {
 
 
   //quadrati medi   
-  let columns1 = 9;  
-  let rows1 = 9; 
-  let rectSize1 = 80; 
-  let gapX=40; //spazio tra i due quadrati lungo le x
-  let gapY=40; //spazio tra i due quadrati lungo le y
-  let offsetTop=20; //margine in alto 
-  let offsetLeft=20; //margine a sinistra (e di conseguenza a destra)
+  let columns1 = windowHeight;  
+  let rows1 = windowWidth; 
+  let rectSize1 = 2*a/3; 
+  let gapX=a/3; //spazio tra i due quadrati lungo le x
+  let gapY=a/3; //spazio tra i due quadrati lungo le y
+  let offsetTop=a/6; //margine in alto 
+  let offsetLeft=a/6; //margine a sinistra (e di conseguenza a destra)
 
   //determinazione posizione rettangoli medi tramite il loop "for"
   for (let r=0; r<columns1; r++){ //impostazione variabile "r" per le colonne
@@ -63,13 +57,13 @@ function draw() {
   }
   
   //quadrati piccoli 
-  let columns2 = 9; 
-  let rows2 = 9; 
-  let rectSize2 = 40; 
-  let gapX2=80; 
-  let gapY2=80; 
-  let offsetTop2=40; 
-  let offsetLeft2=40; 
+  let columns2 = windowHeight; 
+  let rows2 = windowWidth; 
+  let rectSize2 = a/3; 
+  let gapX2=2*a/3; 
+  let gapY2=2*a/3; 
+  let offsetTop2=a/3; 
+  let offsetLeft2=a/3; 
 
   //determinazione posizione quadrati piccoli tramite il loop "for"
   for (let m=0; m<columns2; m++){ //impostazione variabile "m" per le colonne
@@ -84,3 +78,5 @@ function draw() {
   }
  
 }
+
+
